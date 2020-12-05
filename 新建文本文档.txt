@@ -1,0 +1,20 @@
+https://blog.csdn.net/taoerit/article/details/39533563?
+
+https://blog.csdn.net/taoerit/article/details/39502115?
+
+测试的结果由断言确定，如果测试中的任何断言失败
+（致命或者非致命），
+或者如果测试崩溃，则整个测试失败，否则，它成功。
+？问题：这个整个测试失败，是指用例有误，还是程序BUG
+
+为什么要使用全局事件
+使用全局事件，必须写一个类，
+继承testing::Environment类，实现里面的SetUp和TearDown方法。
+
+1. SetUp()方法在所有案例执行前执行
+
+2. TearDown()方法在所有案例执行后执行
+
+调用ASSERT_TRUE的函数，返回值类型定义必须是void，
+如果想返回别的类型，就用EXPECT_TRUE：
+
